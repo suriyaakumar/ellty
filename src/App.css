@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+body {
+  font-family: Montserrat;
+  color: #1f2128;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18.2px;
+  text-align: left;
+}
+
+.container {
+  width: inherit;
+  height: 164px;
+  overflow-y: auto;
+  box-sizing: content-box;
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.hug {
+  width: 370px;
+  height: 326px;
+  background-color: #ffffff;
+  top: 85px;
+  left: 104px;
+  position: relative;
+  border-radius: 6px;
+  border: 1px;
+  border-color: #eeeeee;
+  padding: 10px 0px 10px 0px;
+  box-shadow: 0px 0px 4px 0px rgba(20, 20, 20, 0.1),
+    0px 8px 15px 0px rgba(20, 20, 20, 0.12);
+}
+
+.button {
+  background: #ffce22;
+  width: 340px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #ffd84d;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + span::after {
+  display: inline-block;
+  vertical-align: middle;
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  background-color: #fff;
+  border: 1px solid #1f8e43;
+  border-radius: 2px;
+}
+
+input[type="checkbox"]:not([disabled]):not(:checked) + span:hover::after {
+  content: "\f00c";
+  font-family: "FontAwesome";
+  font-size: 13px;
+  text-align: center;
+  line-height: 14px;
+  color: #1f8e43;
+}
+
+input[type="checkbox"]:disabled + span::after {
+  opacity: 0.3;
+}
+
+input[type="checkbox"]:checked + span::after {
+  content: "\f00c";
+  font-family: "FontAwesome";
+  font-size: 13px;
+  text-align: center;
+  line-height: 14px;
+  border: 1px solid #1f8e43;
+  color: #fff;
+  background-color: #1f8e43;
+}
+
+.label {
+  height: 26px;
+  padding: 8px 15px 8px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.footer {
+  width: 340px;
+  height: 40px;
+  padding: 10px 15px 10px 15px;
+}
+
+.sep-container {
+  width: 340px;
+  height: 10px;
+  padding: 10px 15px 10px 15px;
+}
+
+.separator {
+  border: 0.7px;
+  border-style: solid;
+  color: #cdcdcd;
+  width: 340px;
+}

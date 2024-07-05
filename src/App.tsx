@@ -1,24 +1,24 @@
-import { useState } from 'react'
+import "./App.css";
+import Checkbox from "./components/checkbox";
+import Separator from "./components/separator";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+    <div className="hug">
+      <Checkbox name="All Pages" />
+      <Separator />
+      <div className="container">
+        <Checkbox name="Page 1" />
+        <Checkbox name="Page 2" />
+        <Checkbox name="Page 3" />
+        <Checkbox name="Page 4" />
+        <Checkbox name="Page 5" />
+        <Checkbox name="Page 6" />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <Separator />
+      <div className="footer">
+        <button className="button">Done</button>
+      </div>
+    </div>
+  );
 }
-
-export default App
