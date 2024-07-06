@@ -82,30 +82,41 @@ body {
 label {
   position: relative;
   cursor: pointer;
+  font-size: 25px;
 }
 
 input[type="checkbox"] {
   display: none;
 }
 
+.block:active {
+  border: 0.75px solid #33B5E5; 
+  background: rgb(131, 211, 240, 0.5);
+  opacity: 0.95;
+  transition: 0.2ms;
+}
+
+
+
 label:after {
   content: " ";
   border: 0.7px solid #cdcdcd;
-  font-size: 20px;
   font-weight: lighter;
-  border-radius: 6px;
+  border-radius: 6px; 
   width: 23px;
   height: 23px;
   position: relative; /* Absolute positioning within the label */
   display: inline-block;
+  color: #e3e3e3;
+
 }
 
 .block:hover label:after {
-  border: 1px solid #878787;
+  border: 1px solid #bdbdbd;
   content: "\e5ca";
+  
   font-family: "Material Symbols Sharp";
   color: #e3e3e3;
-  font-size: 25px;
   text-align: left;
 }
 
@@ -114,8 +125,13 @@ input[type="checkbox"]:checked + label:after {
   content: "\e5ca";
   font-family: "Material Symbols Sharp";
   color: #ffffff;
-  size: 20px;
   text-align: left;
+}
+
+.block:hover input[type="checkbox"]:checked + label:after {
+  background: #5087f8;
+  content: "\e5ca";
+  font-family: "Material Symbols Sharp";
 }
 
 .separator {
