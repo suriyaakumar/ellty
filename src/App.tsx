@@ -1,19 +1,45 @@
 import "./App.css";
+import { useState } from 'react';
 import Checkbox from "./components/checkbox";
 import Separator from "./components/separator";
 
 export default function App() {
+
+  const [isCheckedAll, setIsCheckedAll] = useState(false);
+  const [checkboxes, setCheckboxes] = useState([
+    { id: 1, label: 'Page 1', isChecked: false },
+    { id: 2, label: 'Page 2', isChecked: false },
+    { id: 3, label: 'Page 3', isChecked: false },
+    { id: 4, label: 'Page 4', isChecked: false },
+    { id: 5, label: 'Page 5', isChecked: false },
+    { id: 6, label: 'Page 6', isChecked: false },
+  ]);
+
+  const handleCheckboxChange = (id: number) => {
+    const updatedCheckboxes = checkboxes.map((checkbox) =>
+      checkbox.id === id ? { ...checkbox, isChecked: !checkbox.isChecked } : checkbox
+    );
+    setCheckboxes(updatedCheckboxes);
+    setIsCheckedAll(updatedCheckboxes.every((checkbox) => checkbox.isChecked));
+  };
+
+  const handleMainCheckboxChange = () => {
+    const updatedCheckboxes = checkboxes.map((checkbox) => ({
+      ...checkbox,
+      isChecked: !isCheckedAll,
+    }));
+    setCheckboxes(updatedCheckboxes);
+    setIsCheckedAll(!isCheckedAll);
+  };
+
   return (
     <div className="hug">
-      <Checkbox name="All Pages" />
+      <Checkbox name="All Pages" isChecked={isCheckedAll} onChange={handleMainCheckboxChange}/>
       <Separator />
-      <div className="container">
-        <Checkbox name="Page 1" />
-        <Checkbox name="Page 2" />
-        <Checkbox name="Page 3" />
-        <Checkbox name="Page 4" />
-        <Checkbox name="Page 5" />
-        <Checkbox name="Page 6" />
+      <div className="container"> 
+        {checkboxes.map((checkbox) => (
+          <Checkbox key={checkbox.id} name={checkbox.label} isChecked={checkbox.isChecked} onChange={() => handleCheckboxChange(checkbox.id)}/>
+        ))}
       </div>
       <Separator />
       <div className="footer">
