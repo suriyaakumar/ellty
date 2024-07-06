@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,200..700,0..1,-50..200");
 
 body {
   font-family: Montserrat;
@@ -54,7 +54,7 @@ body {
   background: #ffd84d;
 }
 
-.label {
+.block {
   height: 26px;
   padding: 8px 15px 8px 22px;
   display: flex;
@@ -79,18 +79,46 @@ body {
   padding: 10px 15px 10px 15px;
 }
 
-input[type="checkbox"] {
-    height: 23px;
-    width: 23px;
-    border-radius: 6px;
-    border: 1px solid rgba(20, 20, 20, 0.12)
+label {
+  position: relative;
+  cursor: pointer;
 }
 
-input[type="checkbox"]:hover {
-    outline: none !important;
+input[type="checkbox"] {
+  display: none;
+}
+
+label:after {
+  content: " ";
+  border: 0.7px solid #cdcdcd;
+  font-size: 20px;
+  font-weight: lighter;
+  border-radius: 6px;
+  width: 23px;
+  height: 23px;
+  position: relative; /* Absolute positioning within the label */
+  display: inline-block;
+}
+
+.block:hover label:after {
+  border: 1px solid #878787;
+  content: "\e5ca";
+  font-family: "Material Symbols Sharp";
+  color: #e3e3e3;
+  font-size: 25px;
+  text-align: left;
+}
+
+input[type="checkbox"]:checked + label:after {
+  background: #2469f6;
+  content: "\e5ca";
+  font-family: "Material Symbols Sharp";
+  color: #ffffff;
+  size: 20px;
+  text-align: left;
 }
 
 .separator {
-  border: 0.7px solid #CDCDCD;
+  border: 0.7px solid #cdcdcd;
   width: 340px;
 }
