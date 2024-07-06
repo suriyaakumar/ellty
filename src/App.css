@@ -54,46 +54,6 @@ body {
   background: #ffd84d;
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
-input[type="checkbox"] + span::after {
-  display: inline-block;
-  vertical-align: middle;
-  content: "";
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  background-color: #fff;
-  border: 1px solid #1f8e43;
-  border-radius: 2px;
-}
-
-input[type="checkbox"]:not([disabled]):not(:checked) + span:hover::after {
-  content: "\f00c";
-  font-family: "FontAwesome";
-  font-size: 13px;
-  text-align: center;
-  line-height: 14px;
-  color: #1f8e43;
-}
-
-input[type="checkbox"]:disabled + span::after {
-  opacity: 0.3;
-}
-
-input[type="checkbox"]:checked + span::after {
-  content: "\f00c";
-  font-family: "FontAwesome";
-  font-size: 13px;
-  text-align: center;
-  line-height: 14px;
-  border: 1px solid #1f8e43;
-  color: #fff;
-  background-color: #1f8e43;
-}
-
 .label {
   height: 26px;
   padding: 8px 15px 8px 22px;
@@ -119,9 +79,18 @@ input[type="checkbox"]:checked + span::after {
   padding: 10px 15px 10px 15px;
 }
 
+input[type="checkbox"] {
+    height: 23px;
+    width: 23px;
+    border-radius: 6px;
+    border: 1px solid rgba(20, 20, 20, 0.12)
+}
+
+input[type="checkbox"]:hover {
+    outline: none !important;
+}
+
 .separator {
-  border: 0.7px;
-  border-style: solid;
-  color: #cdcdcd;
+  border: 0.7px solid #CDCDCD;
   width: 340px;
 }
